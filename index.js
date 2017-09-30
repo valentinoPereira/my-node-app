@@ -22,5 +22,8 @@ app.get('/', (req, res) => {
 app.get('/admins', (req, res) => {
 	controller.getAllUsers(req, res);
 });
+app.get('/admins/:id', (req, res) => {
+	controller.getOneUser(req, res);
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

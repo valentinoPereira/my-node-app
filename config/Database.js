@@ -1,15 +1,15 @@
-var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "bank"
+const knex = require('knex')({
+	client: 'mysql',
+	connection: {
+		host: "localhost",
+		user: "root",
+		password: "",
+		database: "bank"
+	}
 });
 
+const bookshelf = require('bookshelf')(knex);
 
-con.connect(function(err) {
-    if (err) throw err;
+module.exports.User = bookshelf.Model.extend({
+  tableName: 'admin_table'
 });
-
-module.exports = con;

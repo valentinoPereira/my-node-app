@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/valentinoPereira/nodejs-rest-api#readme",
   "dependencies": {
+    "bookshelf": "^0.10.4",
     "chai": "^4.1.2",
     "cors": "^2.8.4",
     "express": "^4.16.1",
+    "knex": "^0.13.0",
     "lodash": "^4.17.4",
     "mysql": "^2.14.1",
     "nodemon": "^1.12.1"

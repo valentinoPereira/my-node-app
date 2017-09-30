@@ -4,14 +4,10 @@ const db = require('../config/Database');
 
 exports.auth =  async param => {
 	return new Promise((resolve, reject) => {
-		db.query(`SELECT * FROM admin_table WHERE aname = '${param}'`, function (err, result, fields) {
-			try {
-				assert.isNull(err, 'there was no error');
-				assert.isNotEmpty(result, 'Invalid Username');
-				resolve(JSON.stringify(result));
-			} catch(err) {
-				reject(err);
-			}
-		});
+		db.User.where('aname', param).fetch().then(user => {
+			assert.isNotEmpty(user, 'Invalid Username');
+			resolve(user.toJSON())
+		})
+		.catch(err => reject(err));
 	});
 }
