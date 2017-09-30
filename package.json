@@ -4,7 +4,7 @@
   "description": "my first node js rest api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/valentinoPereira/nodejs-rest-api/issues"
   },
-  "homepage": "https://github.com/valentinoPereira/nodejs-rest-api#readme"
+  "homepage": "https://github.com/valentinoPereira/nodejs-rest-api#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.1",
+    "lodash": "^4.17.4",
+    "mysql": "^2.14.1",
+    "nodemon": "^1.12.1"
+  }
 }
